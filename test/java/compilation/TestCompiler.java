@@ -24,9 +24,10 @@ public class TestCompiler {
             "(ns clj.compiler.testing) " +
             "(def myfunc " +
             "   (fn [x y] " +
+            "     (fn [z] "+
             "       (do " +
-            "           (println (str x \" + \" y))" +
-            "           (* x y))))" +
+            "           (println (str z \" + \" x \" + \" y))" +
+            "           (+ x y z)))))" +
             "(myfunc 2 4)";
     @Test
     public void testCljCode01(){
